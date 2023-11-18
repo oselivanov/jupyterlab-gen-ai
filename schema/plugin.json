@@ -1,0 +1,28 @@
+{
+    "title": "Jupyterlab GenAI",
+    "description": "Jupyterlab 3.x Notebook GenAI integration plugin settings.",
+    "type": "object",
+    "jupyter.lab.shortcuts": [
+        {
+            "command": "jupyterlab-gen-ai:generate-in-a-new-cell",
+            "args": {},
+            "keys": ["Accel Shift Enter"],
+            "selector": "body"
+        }
+    ],
+    "properties": {
+      "request_url": {
+        "type": "string",
+        "title": "Url to send requests to",
+        "description": "",
+        "default": "http://localhost:8000/v1/chat/completions"
+      },
+      "request_template": {
+        "type": "string",
+        "title": "Request template",
+        "description": "",
+        "default": "{\"messages\":[{\"content\":\"You are a helpful assistant, if you asked for a code, you give just a code, without explanations.\",\"role\":\"system\"},{\"content\":\"ACTIVE CELL TEXT\",\"role\":\"user\"}],\"temperature\":0.7,\"repeat_penalty\":1.1,\"stream\":true,\"n\":-1}"
+      }
+    },
+    "additionalProperties": false
+}

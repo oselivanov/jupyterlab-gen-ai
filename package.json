@@ -1,0 +1,64 @@
+{
+    "name": "@oselivanov/jupyterlab-gen-ai",
+    "version": "0.1.0",
+    "description": "Jupyterlab 3.x Notebook GenAI integration plugin.",
+    "keywords": [
+        "jupyter",
+        "jupyterlab",
+        "jupyterlab-extension"
+    ],
+    "homepage": "https://github.com/oselivanov/jupyterlab-gen-ai",
+    "bugs": {
+        "url": "https://github.com/oselivanov/jupyterlab-gen-ai/issues"
+    },
+    "license": "MIT",
+    "author": "Oleg Selivanov",
+    "files": [
+        "lib/**/*.{d.ts,js}",
+        "style/**/*.css",
+        "schema/**/*.json"
+    ],
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "style": "style/index.css",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/oselivanov/jupyterlab-gen-ai.git"
+    },
+    "scripts": {
+        "build": "tsc",
+        "clean": "rimraf lib && rimraf tsconfig.tsbuildinfo",
+        "prepare": "npm run clean && npm run build",
+        "test": "jest",
+        "watch": "tsc -w"
+    },
+    "dependencies": {
+        "@jupyterlab/application": "^3.0.0",
+        "@jupyterlab/codemirror": "^3.0.0",
+        "@jupyterlab/notebook": "^3.0.0",
+        "lodash": "4.17.21",
+        "jquery": "^3.4.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.14.0",
+        "@babel/preset-env": "^7.14.1",
+        "@babel/preset-typescript": "^7.13.0",
+        "@types/codemirror": "^0.0.88",
+        "@types/jest": "^26.0.23",
+        "@types/lodash": "^4.0.0",
+        "@types/jquery": "^3.3.29",
+        "babel-jest": "^26.6.3",
+        "jest": "^26.6.3",
+        "prettier": "2.2.1",
+        "rimraf": "^3.0.0",
+        "ts-node": "^9.1.1",
+        "typescript": "^3.8.3"
+    },
+    "sideEffects": [
+        "style/*.css"
+    ],
+    "jupyterlab": {
+        "extension": true,
+        "schemaDir": "schema"
+    }
+}
